@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "gh" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "gh" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.20.2]
+        node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -27,6 +27,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
     - run: yarn install
-    - run: npm build --if-present
-    - run: yarn global add serve
-    - run: serve -s app
+    - run: yarn build --if-present
+
+    - name: Deploy with gh-pages
+      run: |
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+      env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
