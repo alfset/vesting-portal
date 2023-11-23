@@ -2,7 +2,7 @@
   "name": "deltaswap-crosschain",
   "version": "0.1.1",
   "description": "DeltaSwap CrossChain",
-  "homepage": "/",
+  "homepage": "https:alfset.github.io/vesting-portal/",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
@@ -87,6 +87,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "deploy": "gh-pages -d build",
     "test": "node scripts/test.js --env=jsdom",
     "integration-test": "start-server-and-test 'serve build -l 3006' http://localhost:3006 'cypress run'"
   },
