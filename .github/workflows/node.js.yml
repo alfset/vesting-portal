@@ -26,12 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: yarn install
-    - run: yarn build --if-present
+    - run: npm install
+    - run: npm build --if-present
 
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        yarn run gh-pages -d build
+        npm run gh-pages -d build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
