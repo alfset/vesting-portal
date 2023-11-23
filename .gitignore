@@ -1,8 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/node_modules-
+#node_modules
+#/node_modules-
 
 # testing
 /coverage
@@ -15,7 +15,7 @@
 /stable
 /anyswapExchange_test
 /arb
-/deploy
+#/deploy
 /router
 /sushi
 /oec
@@ -57,7 +57,7 @@ cypress/fixtures/example.json
 /swap
 src/components/NonApprove/nonApproveList.json
 #yarn.lock
-.yarn/install-state.gz
-.yarnrc.yml
-yarn.lock
+#.yarn/install-state.gz
+#.yarnrc.yml
+#yarn.lock
 npminstall-debug.log

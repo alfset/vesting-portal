@@ -1,0 +1,3 @@
+import { Buffer } from "buffer";
+export declare const hash32: (data: Buffer) => Buffer;
+export declare const hash28: (data: Buffer) => Buffer;
