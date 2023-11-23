@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         node-version: [16.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
@@ -32,7 +32,6 @@ jobs:
 
     - name: Deploy with gh-pages
       run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        yarn run gh-pages -d build
+        yarn run gh-pages -d app
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
