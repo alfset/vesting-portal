@@ -1,8 +1,8 @@
 {
-    "name": "Physica-crosschain",
+    "name": "deltaswap-crosschain",
     "version": "0.1.1",
-    "description": "Physica Vesting Portal",
-    "homepage": "https:alfset.github.io/vesting-portal/",
+    "description": "DeltaSwap CrossChain",
+    "homepage": "/",
     "private": true,
     "devDependencies": {
         "@ethersproject/experimental": "^5.0.1",
@@ -87,7 +87,6 @@
     "scripts": {
         "start": "node scripts/start.js",
         "build": "node scripts/build.js",
-        "deploy": "gh-pages -d build",
         "test": "node scripts/test.js --env=jsdom",
         "integration-test": "start-server-and-test 'serve build -l 3006' http://localhost:3006 'cypress run'"
     },
@@ -105,10 +104,10 @@
     "license": "GPL-3.0-or-later",
     "dependencies": {
         "@babel/core": "^7.9.0",
-        "@babel/plugin-proposal-class-properties": "^7.9.0",
+        "@babel/preset-typescript": "^7.21.0",
         "@babel/preset-env": "^7.9.0",
         "@babel/preset-react": "^7.9.0",
-        "@babel/preset-typescript": "^7.21.0",
+        "@babel/plugin-proposal-class-properties": "^7.9.0",
         "@binance-chain/bsc-connector": "^1.0.0",
         "@cardano-ogmios/client": "^5.6.0",
         "@cardano-sdk/core": "^0.9.0",
@@ -150,8 +149,8 @@
         "babel-loader": "^8.1.0",
         "babel-plugin-named-asset-import": "^0.3.6",
         "babel-preset-react-app": "^9.1.2",
-        "bitcoin-ops": "^1.4.1",
         "bitcoinjs-lib": "^6.0.1",
+        "bitcoin-ops": "^1.4.1",
         "camelcase": "^5.3.1",
         "case-sensitive-paths-webpack-plugin": "2.3.0",
         "compression-webpack-plugin": "^5.0.2",
@@ -198,9 +197,9 @@
         "stellar-sdk": "^10.1.2",
         "style-loader": "0.23.1",
         "terser-webpack-plugin": "2.3.5",
-        "toformat": "^2.0.0",
         "tronweb": "^5.0.0",
         "ts-pnp": "1.1.6",
+        "toformat": "^2.0.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "url-loader": "2.3.0",
         "web3": "^1.4.0",
